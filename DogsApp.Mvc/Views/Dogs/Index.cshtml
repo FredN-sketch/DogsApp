@@ -1,0 +1,19 @@
+﻿@model DogsApp.Mvc.Models.Dog[]
+@using DogsApp.Mvc.Models
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DogsLista</title>
+</head>
+<body>
+    <ul>
+        @foreach (Dog dog in Model)
+        {
+            <li>@dog.Name</li>
+        }
+            
+    </ul>
+    <a href="/create">Add dog</a>
+    </body>
+    </html>
