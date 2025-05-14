@@ -12,7 +12,8 @@ namespace DogsApp.Mvc.Services
 
         public void AddDog(Dog dog)
         {
-            dog.Id = dogs.Max(d => d.Id) + 1;
+            dog.Id = dogs.Count == 0 ? 1 : dogs.Max(d => d.Id) + 1;
+       //     dog.Id = dogs.Max(d => d.Id) + 1; //this doesn't work if dogs is empty
             dogs.Add(dog);
         }
         public Dog[] GetAllDogs()
