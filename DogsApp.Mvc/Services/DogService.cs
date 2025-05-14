@@ -5,7 +5,25 @@ namespace DogsApp.Mvc.Services
 {
     public class DogService
     {
-        private List<Dog>;
+        private List<Dog> dogs = [
+            new Dog { Id= 1, Name = "Fido", Age = 1},
+            new Dog { Id= 52, Name = "Brutus", Age = 2},
+        ];
+
+        public void AddDog(Dog dog)
+        {
+            dog.Id = dogs.Max(d => d.Id) + 1;
+            dogs.Add(dog);
+        }
+        public Dog[] GetAllDogs()
+        {
+            return dogs.ToArray();
+        }
+
+        public Dog GetDogById(int id)
+        {
+            return dogs.Single(d => d.Id == id);
+        }
 
     }
 }
