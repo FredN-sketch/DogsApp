@@ -10,7 +10,13 @@
     <ul>
         @foreach (Dog dog in Model)
         {
-            <li>@dog.Name <a href="/edit/@dog.Id">Edit dog</a></li>
+            <li>@dog.Name 
+                <a href="/edit/@dog.Id">Edit dog</a>
+                <form action="" method="post">
+                    <input name="id" value=@dog.Id type="hidden"/>
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
         }
             
     </ul>

@@ -32,5 +32,12 @@ namespace DogsApp.Mvc.Services
             
         }
 
+        public void DeleteDog(int id)
+        {
+            var targetDog = GetDogById(id);
+            dogs.Remove(targetDog); 
+            targetDog = null;
+        }
+
     }
 }
