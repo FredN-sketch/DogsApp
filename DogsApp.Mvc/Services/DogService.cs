@@ -24,6 +24,13 @@ namespace DogsApp.Mvc.Services
         {
             return dogs.Single(d => d.Id == id);
         }
+        public void EditDog(Dog dog)
+        {
+            var targetDog = GetDogById(dog.Id);
+            targetDog.Name = dog.Name;
+            targetDog.Age = dog.Age;
+            
+        }
 
     }
 }
